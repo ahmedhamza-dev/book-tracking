@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home components testing 1`] = `
+<div
+  className="list-books"
+>
+  <div
+    className="list-books-title"
+  >
+    <h1>
+      MyReads
+    </h1>
+  </div>
+  <div
+    className="list-books-content"
+    data-testid="books-content"
+  >
+    <div>
+      <div
+        className="bookshelf"
+      >
+        <h2
+          className="bookshelf-title"
+          data-testid="shelf-title"
+        >
+          Currently Reading
+        </h2>
+        <div
+          className="bookshelf-books"
+        >
+          <ol
+            className="books-grid"
+            data-testid="books-grid"
+          />
+        </div>
+      </div>
+      <div
+        className="bookshelf"
+      >
+        <h2
+          className="bookshelf-title"
+          data-testid="shelf-title"
+        >
+          Want to Read
+        </h2>
+        <div
+          className="bookshelf-books"
+        >
+          <ol
+            className="books-grid"
+            data-testid="books-grid"
+          />
+        </div>
+      </div>
+      <div
+        className="bookshelf"
+      >
+        <h2
+          className="bookshelf-title"
+          data-testid="shelf-title"
+        >
+          Read
+        </h2>
+        <div
+          className="bookshelf-books"
+        >
+          <ol
+            className="books-grid"
+            data-testid="books-grid"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="open-search"
+  >
+    <a
+      className="open-search-link"
+      href="/search"
+      onClick={[Function]}
+    >
+      Add a Book
+    </a>
+  </div>
+</div>
+`;

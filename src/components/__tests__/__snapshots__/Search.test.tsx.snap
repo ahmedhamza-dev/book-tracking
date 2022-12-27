@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search component test 1`] = `
+<div
+  className="search-books"
+>
+  <div
+    className="search-books-bar"
+  >
+    <a
+      className="close-search"
+      href="/"
+      onClick={[Function]}
+    >
+      Close
+    </a>
+    <div
+      className="search-books-input-wrapper"
+    >
+      <input
+        data-testid="search-input"
+        onChange={[Function]}
+        placeholder="Search by title or author"
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    className="search-books-results"
+  >
+    <ol
+      className="books-grid"
+      data-testid="books-grid"
+    />
+  </div>
+</div>
+`;
