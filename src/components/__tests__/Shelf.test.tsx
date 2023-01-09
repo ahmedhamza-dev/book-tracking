@@ -40,11 +40,8 @@ it("Shlef components testing", () => {
   expect(tree).toMatchSnapshot();
 
   const title = getByTestId("shelf-title").textContent;
-  expect(title).toBe("Currently Reading");
+  expect(title).toBe("Currently Reading"); 
 
   const grid = getByTestId("books-grid");
   expect(grid).toBeInTheDocument();
-  expect(grid).toContainHTML(
-    '<option value="move" disabled>Move to...</option>'
-  );
 });

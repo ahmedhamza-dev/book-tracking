@@ -1,11 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Search component test 1`] = `
-<div
-  className="search-books"
->
+Array [
   <div
-    className="search-books-bar"
+    className="sc-ksBlkl gtennU"
   >
     <a
       className="close-search"
@@ -15,23 +13,24 @@ exports[`Search component test 1`] = `
       Close
     </a>
     <div
-      className="search-books-input-wrapper"
+      className="sc-hBxehG fvTiWy"
     >
       <input
+        className="sc-fnGiBr ldZNIw"
         data-testid="search-input"
         onChange={[Function]}
         placeholder="Search by title or author"
         type="text"
       />
     </div>
-  </div>
+  </div>,
   <div
-    className="search-books-results"
+    className="sc-fEXmlR hQzSRh"
   >
-    <ol
-      className="books-grid"
+    <div
+      className="sc-gKPRtg hzXScj"
       data-testid="books-grid"
     />
-  </div>
-</div>
+  </div>,
+]
 `;

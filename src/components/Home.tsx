@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Shelf from "./Shelf";
 import { getAllBooks } from "../redux/slices";
+import { ContentWrapper, MainTitle, OpenSearch } from "./styled-components";
 
 const Home = () => {
   const state: any = useSelector((state) => state);
@@ -15,42 +16,38 @@ const Home = () => {
     [dispatch]
   );
   return (
-    <div className="list-books">
-      <div className="list-books-title">
-        <h1>MyReads</h1>
-      </div>
-      <div className="list-books-content" data-testid="books-content">
-        <div>
-          {allBooks.books && (
-            <>
-              <Shelf
-                data-testid="currently-Reading"
-                title="Currently Reading"
-                category="currentlyReading"
-                books={allBooks.books}
-              />
-              <Shelf
-                data-testid="wantToRead"
-                title="Want to Read"
-                category="wantToRead"
-                books={allBooks.books}
-              />
-              <Shelf
-                data-testid="Read"
-                title="Read"
-                category="read"
-                books={allBooks.books}
-              />
-            </>
-          )}
-        </div>
-      </div>
-      <div className="open-search">
+    <>
+      <MainTitle>MyReads</MainTitle>
+      <ContentWrapper data-testid="books-content">
+        {allBooks.books && (
+          <>
+            <Shelf
+              data-testid="currently-Reading"
+              title="Currently Reading"
+              category="currentlyReading"
+              books={allBooks.books}
+            />
+            <Shelf
+              data-testid="wantToRead"
+              title="Want to Read"
+              category="wantToRead"
+              books={allBooks.books}
+            />
+            <Shelf
+              data-testid="Read"
+              title="Read"
+              category="read"
+              books={allBooks.books}
+            />
+          </>
+        )}
+      </ContentWrapper>
+      <OpenSearch>
         <Link to="/search" className="open-search-link">
           Add a Book
         </Link>
-      </div>
-    </div>
+      </OpenSearch>
+    </>
   );
 };
 

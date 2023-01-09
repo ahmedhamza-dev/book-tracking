@@ -1,79 +1,73 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home components testing 1`] = `
-<div
-  className="list-books"
->
-  <div
-    className="list-books-title"
+Array [
+  <h2
+    className="sc-bcXHqe icDmVn"
   >
-    <h1>
-      MyReads
-    </h1>
-  </div>
+    MyReads
+  </h2>,
   <div
-    className="list-books-content"
+    className="sc-gswNZR jOpWbm"
     data-testid="books-content"
   >
-    <div>
-      <div
-        className="bookshelf"
+    <div
+      className="sc-hLBbgP inROHo"
+    >
+      <h2
+        className="sc-eDvSVe jSzroE"
+        data-testid="shelf-title"
       >
-        <h2
-          className="bookshelf-title"
-          data-testid="shelf-title"
-        >
-          Currently Reading
-        </h2>
-        <div
-          className="bookshelf-books"
-        >
-          <ol
-            className="books-grid"
-            data-testid="books-grid"
-          />
-        </div>
-      </div>
+        Currently Reading
+      </h2>
       <div
-        className="bookshelf"
+        className="sc-jSUZER cUjmio"
       >
-        <h2
-          className="bookshelf-title"
-          data-testid="shelf-title"
-        >
-          Want to Read
-        </h2>
         <div
-          className="bookshelf-books"
-        >
-          <ol
-            className="books-grid"
-            data-testid="books-grid"
-          />
-        </div>
-      </div>
-      <div
-        className="bookshelf"
-      >
-        <h2
-          className="bookshelf-title"
-          data-testid="shelf-title"
-        >
-          Read
-        </h2>
-        <div
-          className="bookshelf-books"
-        >
-          <ol
-            className="books-grid"
-            data-testid="books-grid"
-          />
-        </div>
+          className="sc-gKPRtg hzXScj"
+          data-testid="books-grid"
+        />
       </div>
     </div>
-  </div>
+    <div
+      className="sc-hLBbgP inROHo"
+    >
+      <h2
+        className="sc-eDvSVe jSzroE"
+        data-testid="shelf-title"
+      >
+        Want to Read
+      </h2>
+      <div
+        className="sc-jSUZER cUjmio"
+      >
+        <div
+          className="sc-gKPRtg hzXScj"
+          data-testid="books-grid"
+        />
+      </div>
+    </div>
+    <div
+      className="sc-hLBbgP inROHo"
+    >
+      <h2
+        className="sc-eDvSVe jSzroE"
+        data-testid="shelf-title"
+      >
+        Read
+      </h2>
+      <div
+        className="sc-jSUZER cUjmio"
+      >
+        <div
+          className="sc-gKPRtg hzXScj"
+          data-testid="books-grid"
+        />
+      </div>
+    </div>
+  </div>,
   <div
-    className="open-search"
+    className="sc-dkrFOg iaXMdo"
   >
     <a
       className="open-search-link"
@@ -82,6 +76,6 @@ exports[`Home components testing 1`] = `
     >
       Add a Book
     </a>
-  </div>
-</div>
+  </div>,
+]
 `;

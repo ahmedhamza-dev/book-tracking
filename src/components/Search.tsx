@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { bookSearch } from "../redux/slices";
 import SearchShelf from "./SearchShelf";
+import { BooksBar, BooksGrid, Input, InputWrapper, Results } from "./styled-components";
 
 const Search = () => {
   const [search, setSearch] = useState("");
@@ -20,30 +21,28 @@ const Search = () => {
     [search]
   );
   return (
-    <div className="search-books">
-      <div className="search-books-bar">
+    <>
+      <BooksBar>
         <Link to="/" className="close-search">
           Close
         </Link>
-        <div className="search-books-input-wrapper">
-          <input
+        <InputWrapper>
+          <Input
             type="text"
             placeholder="Search by title or author"
             onChange={searchHanlding}
             data-testid="search-input"
           />
-        </div>
-      </div>
-      <div className="search-books-results">
-        <ol className="books-grid" data-testid="books-grid">
+        </InputWrapper>
+      </BooksBar>
+      <Results >
+        <BooksGrid data-testid="books-grid">
           {allBooks.booksFromSearch && (
-            <SearchShelf
-              books={allBooks.booksFromSearch}
-            />
+            <SearchShelf books={allBooks.booksFromSearch} />
           )}
-        </ol>
-      </div>
-    </div>
+        </BooksGrid>
+      </Results>
+    </>
   );
 };
 

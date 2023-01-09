@@ -1,15 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Book component test 1`] = `
-<li>
+<li
+  className="sc-iBYQkv dcwHZs"
+>
   <div
-    className="book"
+    className="sc-ftTHYK jTRBDk"
   >
     <div
-      className="book-top"
+      className="sc-pyfCe hvhZEf"
     >
       <div
-        className="book-cover"
+        className="sc-jrcTuL hXUQtC"
         style={
           Object {
             "backgroundImage": "url(http://books.google.com/books/content?id=nggnmAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api)",
@@ -19,35 +21,41 @@ exports[`Book component test 1`] = `
         }
       />
       <div
-        className="book-shelf-changer"
+        className="sc-kDvujY iOvohN"
       >
         <select
+          className="sc-ipEyDJ iPTPve"
           data-testid="select"
           onChange={[Function]}
           value="currentlyReading"
         >
           <option
+            className="sc-csuSiG"
             disabled={true}
             value="move"
           >
             Move to...
           </option>
           <option
+            className="sc-csuSiG"
             value="currentlyReading"
           >
             Currently Reading
           </option>
           <option
+            className="sc-csuSiG"
             value="wantToRead"
           >
             Want to Read
           </option>
           <option
+            className="sc-csuSiG"
             value="read"
           >
             Read
           </option>
           <option
+            className="sc-csuSiG"
             value="none"
           >
             None
@@ -56,13 +64,13 @@ exports[`Book component test 1`] = `
       </div>
     </div>
     <div
-      className="book-title"
+      className="sc-eDWCr epAbNv"
       data-testid="book-title"
     >
       The Linux Command Line
     </div>
     <div
-      className="book-authors"
+      className="sc-bqWxrE lawEgt book-authors"
     >
       <span>
         William E. Shotts, Jr.
@@ -70,7 +78,7 @@ exports[`Book component test 1`] = `
       </span>
     </div>
     <div
-      className="book-authors"
+      className="sc-bqWxrE lawEgt book-authors"
     >
       <strong
         data-testid="book-shelf"
