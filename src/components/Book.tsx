@@ -11,7 +11,7 @@ const Book = ({ book }: BookProps) => {
   };
   return (
     <BookContainer>
-      <BookItem>
+      <BookItem id="book">
         <BookTop>
           <BookCover
             style={{
@@ -20,11 +20,11 @@ const Book = ({ book }: BookProps) => {
               backgroundImage: `url(${book.imageLinks.smallThumbnail})`,
             }}
           />
-          <Changer>
+          <Changer id="changer">
             <BookSelector
               onChange={updateShelf}
               value={book.shelf ? book.shelf : "none"}
-              data-testid="select"
+              id="select"
             >
               <BookSelectorItem value="move" disabled>
                 Move to...
@@ -36,7 +36,7 @@ const Book = ({ book }: BookProps) => {
             </BookSelector>
           </Changer>
         </BookTop>
-        <BookTitle data-testid="book-title">{book.title}</BookTitle>
+        <BookTitle id="book-title">{book.title}</BookTitle>
         <BookAuthor className="book-authors">
           {book.authors.map((auther: any, index: number) => (
             <span key={index}>

@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <>
       <MainTitle>MyReads</MainTitle>
-      <ContentWrapper data-testid="books-content">
+      <ContentWrapper id="books-content">
         {allBooks.books && (
           <>
             <Shelf

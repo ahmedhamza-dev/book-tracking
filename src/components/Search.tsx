@@ -22,7 +22,7 @@ const Search = () => {
   );
   return (
     <>
-      <BooksBar>
+      <BooksBar id="search-bar">
         <Link to="/" className="close-search">
           Close
         </Link>
@@ -31,7 +31,7 @@ const Search = () => {
             type="text"
             placeholder="Search by title or author"
             onChange={searchHanlding}
-            data-testid="search-input"
+            id="search-input"
           />
         </InputWrapper>
       </BooksBar>
