@@ -61,7 +61,7 @@ const bookSlice = createSlice({
         }
       })
       .addCase(bookSearch.fulfilled, (state, action) => {
-        state.booksFromSearch = action.payload.map((searchBook: BookData) => {
+        state.booksFromSearch = action.payload.error ? [] : action.payload.map((searchBook: BookData) => {
           state.books.forEach((book: BookData) => {
             if (searchBook.id === book.id) searchBook.shelf = book.shelf;
           });
