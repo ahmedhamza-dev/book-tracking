@@ -38,7 +38,7 @@ const Book = ({ book }: BookProps) => {
         </BookTop>
         <BookTitle id="book-title">{book.title}</BookTitle>
         <BookAuthor className="book-authors">
-          {book.authors.map((auther: any, index: number) => (
+          {book.authors && book.authors.map((auther: any, index: number) => (
             <span key={index}>
               {auther}
               {index !== book.authors.length - 1 ? <span>, </span> : ""}

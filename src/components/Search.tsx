@@ -1,25 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { SagaActions } from "../redux/sagaActions";
 import SearchShelf from "./SearchShelf";
-import { BooksBar, BooksGrid, Input, InputWrapper, Results } from "./styled-components";
+import {
+  BooksBar,
+  BooksGrid,
+  Input,
+  InputWrapper,
+  Results,
+} from "./styled-components";
 
 const Search = () => {
-  const [search, setSearch] = useState("");
   const state: any = useSelector((state) => state);
   const dispatch = useDispatch<any>();
   const { allBooks } = state;
 
   const searchHanlding = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(event.target.value);
+    dispatch({ type: SagaActions.BOOK_SEARCH, payload: event.target.value });
   };
-  useEffect(
-    () => {
-      dispatch({type: SagaActions.BOOK_SEARCH, payload: search});
-    },
-    [search]
-  );
+  useEffect(() => {
+    dispatch({ type: SagaActions.BOOK_SEARCH, payload: "" });
+  }, []);
   return (
     <>
       <BooksBar id="search-bar">
@@ -35,7 +37,7 @@ const Search = () => {
           />
         </InputWrapper>
       </BooksBar>
-      <Results >
+      <Results>
         <BooksGrid data-testid="books-grid">
           {allBooks.booksFromSearch && (
             <SearchShelf books={allBooks.booksFromSearch} />
