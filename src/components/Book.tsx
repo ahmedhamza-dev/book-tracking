@@ -1,13 +1,13 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { shelfChange } from "../redux/slices";
+import { SagaActions } from "../redux/sagaActions";
 import { BookProps } from "./models/ComponentsProps";
 import { BookAuthor, BookContainer, BookCover, BookItem, BookSelector, BookSelectorItem, BookTitle, BookTop, Changer } from "./styled-components";
 
 const Book = ({ book }: BookProps) => {
   const dispatch = useDispatch<any>();
   const updateShelf =  (event: React.ChangeEvent<HTMLSelectElement>) => {
-    dispatch(shelfChange({ ...book, shelf: event.target.value }));
+    dispatch({type: SagaActions.SHELF_CHANGE, payload: { ...book, shelf: event.target.value }});
   };
   return (
     <BookContainer>

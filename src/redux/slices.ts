@@ -26,53 +26,47 @@ const bookSlice = createSlice({
     books: [],
     booksFromSearch: [],
   },
-  reducers: {},
-  extraReducers: (builder) => {
-    builder
-      .addCase(getAllBooks.fulfilled, (state, action) => {
-        state.books = action.payload;
-      })
-      .addCase(getAllBooks.rejected, (state) => {
-        state.books = [];
-      })
-      .addCase(shelfChange.fulfilled, (state, action) => {
-        if (state.booksFromSearch.length > 0) {
-          let books: any = [...state.books];
-          const bookIsExist = books.findIndex(
-            (res: BookData) => res.id === action.payload.id
-          );
-          let searchBooks: any = state.booksFromSearch.map((res: BookData) => {
-            if (res.id === action.payload.id)
-              return { ...res, shelf: action.payload.shelf };
-            return res;
-          });
-          bookIsExist
-            ? books.splice(bookIsExist, 1, action.payload)
-            : books.push(action.payload);
-          state.booksFromSearch = searchBooks;
-          state.books = books;
-        } else {
-          let books: any = state.books.map((res: BookData) => {
-            if (res.id === action.payload.id)
-              return { ...res, shelf: action.payload.shelf };
-            return res;
-          });
-          state.books = books;
-        }
-      })
-      .addCase(bookSearch.fulfilled, (state, action) => {
-        state.booksFromSearch = action.payload.error ? [] : action.payload.map((searchBook: BookData) => {
-          state.books.forEach((book: BookData) => {
-            if (searchBook.id === book.id) searchBook.shelf = book.shelf;
-          });
-          return searchBook;
+  reducers: {
+    getBooks: (state, action) => {
+      return{
+        ...state,
+        books: action.payload
+      }
+    },
+    changeShelf: (state, action) =>{
+      if (state.booksFromSearch.length > 0) {
+        let books: any = [...state.books];
+        const bookIsExist = books.findIndex(
+          (res: BookData) => res.id === action.payload.id
+        );
+        let searchBooks: any = state.booksFromSearch.map((res: BookData) => {
+          if (res.id === action.payload.id)
+            return { ...res, shelf: action.payload.shelf };
+          return res;
         });
-      })
-      .addCase(bookSearch.rejected, (state) => {
-        console.log("rejexxted");
-        state.booksFromSearch = [];
+        bookIsExist
+          ? books.splice(bookIsExist, 1, action.payload)
+          : books.push(action.payload);
+        state.booksFromSearch = searchBooks;
+        state.books = books;
+      } else {
+        let books: any = state.books.map((res: BookData) => {
+          if (res.id === action.payload.id)
+            return { ...res, shelf: action.payload.shelf };
+          return res;
+        });
+        state.books = books;
+      }
+    },
+    searcBook: (state, action) => {
+      state.booksFromSearch = action.payload.error ? [] : action.payload.map((searchBook: BookData) => {
+        state.books.forEach((book: BookData) => {
+          if (searchBook.id === book.id) searchBook.shelf = book.shelf;
+        });
+        return searchBook;
       });
-  },
+    }
+  }
 });
-
+export const { getBooks, changeShelf, searcBook } = bookSlice.actions;
 export default bookSlice;

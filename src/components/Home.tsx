@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { SagaActions } from "../redux/sagaActions";
+// import { getBooks } from "../redux/slices";
 import Shelf from "./Shelf";
-import { getAllBooks } from "../redux/slices";
 import { ContentWrapper, MainTitle, OpenSearch } from "./styled-components";
 
 const Home = () => {
@@ -11,7 +12,7 @@ const Home = () => {
   const { allBooks } = state;
   useEffect(
     () => {
-      dispatch(getAllBooks());
+      dispatch({ type: SagaActions.FETCH_ALL_BOOKS });
     },
     [dispatch]
   );

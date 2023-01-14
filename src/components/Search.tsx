@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { bookSearch } from "../redux/slices";
+import { SagaActions } from "../redux/sagaActions";
 import SearchShelf from "./SearchShelf";
 import { BooksBar, BooksGrid, Input, InputWrapper, Results } from "./styled-components";
 
@@ -16,7 +16,7 @@ const Search = () => {
   };
   useEffect(
     () => {
-      dispatch(bookSearch(search));
+      dispatch({type: SagaActions.BOOK_SEARCH, payload: search});
     },
     [search]
   );
